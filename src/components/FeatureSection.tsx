@@ -1,86 +1,68 @@
 import { CiSquareCheck } from "react-icons/ci";
 import Image from "next/image";
-import { FaCheckCircle } from "react-icons/fa";
 
 const FeatureSection = () => {
   return (
-    <>
-      <section className="relative text-center py-16 px-6 bg-pink-100">
-        <h2 className="text-2xl md:text-4xl font-bold text-black">
-          Visualize all your construction supplies and equipment on your Sortly
-          dashboard
-        </h2>
-        <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
-          Sortly helps businesses of all sizes track the inventory and assets
-          that make their company run—saving them time, money, and stress.
-        </p>
-        <div className="mt-8 flex flex-col md:flex-row items-center md:items-start justify-center gap-8 relative">
-          <div className="relative w-full md:w-1/2">
-            <img
-              src="/dashboard-image.png"
-              alt="Dashboard"
-              className="w-full rounded-lg shadow-lg"
+    <section className="">
+      <div className="absolute z-0">
+        <svg
+          width="622"
+          height="481"
+          viewBox="0 0 622 481"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M622 240.5C622 107.676 514.324 0 381.5 0H-170V481H381.5C514.324 481 622 373.324 622 240.5V240.5Z"
+            fill="#FAE0E1"
+          />
+        </svg>
+      </div>
+      <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen bg-white px-6 py-12 z-20">
+        {/* Left Side - Image with Background Bubble */}
+        <div className="relative w-full lg:w-1/2 flex justify-center">
+          <svg
+            className="absolute -z-10 w-[80%] h-auto max-w-lg"
+            width="827"
+            height="703"
+            viewBox="0 0 827 703"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 392C0 175.505 175.504 0.000183105 392 0.000183105H456C672.496 0.000183105 848 175.505 848 392V703H0V392Z"
+              fill="#FFF5F5"
             />
-          </div>
-          <ul className="w-full md:w-1/2 text-left space-y-4">
-            {Array(4).fill(
-              <li className="flex items-start space-x-3 bg-pink-200 p-3 rounded-lg">
-                <CiSquareCheck className="text-black text-2xl" />
-                <p className="text-black font-medium">
+          </svg>
+          <img
+            src="/path-to-your-image.png"
+            alt="Inventory Management"
+            className="w-full max-w-lg rounded-lg shadow-lg"
+          />
+        </div>
+
+        {/* Right Side - Text and Features */}
+        <div className="w-full lg:w-1/2 mt-10 lg:mt-0 lg:pl-12">
+          {/* Feature List */}
+          <div className="space-y-4">
+            {[1, 2, 3, 4].map((_, index) => (
+              <div
+                key={index}
+                className="flex items-start space-x-3 justify-center"
+              >
+                <span className=" h-full bg-red-200 p-1 rounded-sm m-auto ">
+                  <CiSquareCheck className="text-black text-2xl" size={20} />
+                </span>
+                <p className="text-gray-700 text-base">
                   Upload high-resolution photos so you can visually track and
                   verify inventory and monitor condition.
                 </p>
-              </li>
-            )}
-          </ul>
-        </div>
-      </section>
-      <div className="bg-white min-h-screen py-10 flex flex-col items-center px-5 md:px-20">
-      {/* Header Section */}
-      <div className="text-center max-w-2xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Visualize all your construction supplies and equipment on your <span className="text-gray-700 font-semibold">Sortly dashboard</span>
-        </h1>
-        <p className="text-gray-600 mt-3">
-          Sortly helps businesses of all sizes track the inventory and assets that make their company run - saving them time, money, and stress.
-        </p>
-      </div>
-      
-      {/* Main Content */}
-      <div className="mt-10 grid md:grid-cols-2 gap-10 items-center w-full max-w-4xl">
-        {/* Image Section */}
-        <div className="relative w-full max-w-md">
-          <div className="bg-red-100 rounded-lg p-4 shadow-md relative">
-            <Image 
-              src="/dashboard-image.png" 
-              alt="Sortly Dashboard" 
-              width={470} 
-              height={409} 
-              className="rounded-lg"
-            />
+              </div>
+            ))}
           </div>
         </div>
-        
-        {/* Features List */}
-        <div className="space-y-5">
-          {Array(4).fill(0).map((_, index) => (
-            <div key={index} className="flex items-center space-x-3">
-              <Image 
-              src="/checkbox.svg" 
-              alt="Sortly Dashboard" 
-              width={20} 
-              height={20} 
-              className="rounded-lg"
-            />
-              <p className="text-gray-700 text-lg">
-                Upload high-resolution photos so you can visually track and verify inventory and monitor condition.
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
-    </div>
-    </>
+    </section>
   );
 };
 
