@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +15,47 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={``}>
-        {/* <Navbar /> */}
+      <body className="flex flex-col">
+        <header className="w-full">
+             {/* Top Info Bar */}
+             <div className="bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm py-2">
+               <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-16">
+                 <div className="flex flex-col md:flex-row md:space-x-6 text-center items-center md:text-left">
+                   <span className="mr-[5px]">
+                   <i className="ri-phone-line"></i></span>
+                   <span>+1 (888) 123-4567</span>
+                   <span className="mr-[5px]">
+                   <i className="ri-mail-line"></i>
+                   </span>
+                   <span> support@inventorypro.com</span>
+                 </div>
+                 <div className="flex space-x-4 mt-2 md:mt-0">
+                   <a href="#" className="hover:opacity-75 !text-white">
+                     <i className="ri-twitter-x-line"></i>
+                   </a>
+                   <a href="#" className="hover:opacity-75 !text-white">
+                     <i className="ri-linkedin-line"></i> 
+                   </a>
+                   <a href="#" className="hover:opacity-75 !text-white">
+                     <i className="ri-facebook-line"></i> 
+                   </a>
+                   <a href="#" className="hover:opacity-75 !text-white">
+                     <i className="ri-global-line mr-3"></i>
+                     English
+                   </a>
+                 </div>
+               </div>
+             </div>
+       
+             {/* Main Navbar */}
+             <div className="bg-white shadow-md">
+               <div className="container mx-auto px-16 py-3 flex justify-between items-center">
+                 <Navbar />
+               </div>
+             </div>
+           </header>
         {children}
+        <Footer />
       </body>
     </html>
   );
